@@ -12,7 +12,7 @@ HUB_ADDRESS = 'localhost'
 data = '0010'
 
 
-client = Client(CLIENT_NAME, HUB_PORT, HUB_ADDRESS)  # Replace with actual address
+client = Client(CLIENT_NAME, HUB_PORT, HUB_ADDRESS)
 client.connect()
 time.sleep(2)
 

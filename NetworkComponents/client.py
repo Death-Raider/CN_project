@@ -16,7 +16,7 @@ class Client:
             self.socket.connect((self.address, self.port))
             print(f"Client {self.name} connected to hub server at {self.address}:{self.port}")
             hub_name_resolved = hub_name if hub_name != None else -1
-            self.send_message(Packet(hub_name_resolved, self.name, hub_name_resolved, self.name, self.name)) # auth packet
+            self.send_message(Packet(hub_name_resolved, self.name, hub_name_resolved, self.name, self.name)) # identification packet
 
         except ConnectionError as e:
             print(f"Connection error: {e}")

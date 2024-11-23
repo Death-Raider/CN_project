@@ -14,9 +14,9 @@ class ClientHandler(threading.Thread):
         network_paths = data.get_network_add()
         physical = data.get_physical_add()
         print("Data Path Packet",network_paths,physical)
-        relay_name_condition = (network_paths['NetworkReceiver'] == self.name) and (physical['Receiver'] == self.name)
+        net_name_condition = (network_paths['NetworkReceiver'] == self.name) and (physical['Receiver'] == self.name)
         general_identification_condition = (network_paths['NetworkReceiver'] == -1) and (physical['Receiver'] == -1)
-        return network_paths, physical, relay_name_condition or general_identification_condition
+        return network_paths, physical, net_name_condition or general_identification_condition
 
     def run(self):
         print("client running", self.client_socket)
